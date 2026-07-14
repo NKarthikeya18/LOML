@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<!-- Importing Romantic & Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:ital,wght@0,600;1,400&family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe5ec, #ffccd5, #fff0f3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+h2.title {
+    margin-bottom: 30px;
+    color: #c9184a;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.interactive-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.paper {
+    width: 100%;
+    max-width: 340px;
+    height: 380px;
+    display: none;
+    background: #fffdf9;
+    background-image: linear-gradient(#e8e1d5 1px, transparent 1px);
+    background-size: 100% 32px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(201, 24, 74, 0.15);
+    padding: 40px 30px;
+    text-align: left;
+    border: 1px solid rgba(232, 225, 213, 0.6);
+}
+
+.heart-envelope {
+    width: 120px;
+    height: 120px;
+    background: #ff758f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    box-shadow: 0 10px 25px rgba(255, 117, 143, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.heart-envelope:hover {
+    transform: scale(1.1);
+    background: #ff4d6d;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Enabled smooth scrolling behavior */
+.message {
+    height: 100%;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 2;
+    color: #4a4a4a;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    scroll-behavior: smooth; 
+}
+
+.message::-webkit-scrollbar {
+    width: 4px;
+}
+.message::-webkit-scrollbar-thumb {
+    background: #ffccd5;
+    border-radius: 10px;
+}
+
+button.next-btn {
+    padding: 12px 35px;
+    margin-top: 25px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.3);
+    transition: all 0.3s ease;
+}
+
+button.next-btn:hover {
+    background: #c9184a;
+    transform: translateY(-2px);
+}
+
+.feedback {
+    display: none;
+    width: 100%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fade 0.8s ease forwards;
+    text-align: center;
+}
+
+.feedback h2 {
+    font-family: 'Playfair Display', serif;
+    color: #c9184a;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.feedback p {
+    font-size: 15px;
+    color: #5a5a5a;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    background: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ffccd5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label:has(input:checked) {
+    background: #ff758f;
+    color: white;
+    border-color: #ff758f;
+}
+
+.feedback select {
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ffccd5;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.feedback textarea {
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ffccd5;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    background: white;
+}
+
+.feedback input[type=submit] {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ff4d6d;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.feedback input[type=submit]:hover {
+    background: #c9184a;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.typing {
+    white-space: pre-wrap;
+    border-right: 2px solid #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainContainer">
+
+    <div class="interactive-area" id="interactiveArea">
+        <h2 class="title" id="headerText">Tap the heart to open 💌</h2>
+        
+        <div class="heart-envelope" id="heartBtn" onclick="openLetter()">
+            ❤️
+        </div>
+
+        <div class="paper" id="paperLetter">
+            <!-- Added container reference for automatic scrolling -->
+            <div class="message" id="scrollContainer">
+                <span id="text" class="typing"></span>
+            </div>
+        </div>
+
+        <button id="nextBtn" class="next-btn" onclick="showFeedback()">
+            Next →
+        </button>
+    </div>
+
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("heartBtn").style.display = "none";
+    document.getElementById("headerText").style.display = "none";
+    
+    const paper = document.getElementById("paperLetter");
+    paper.style.display = "block";
+    paper.style.animation = "fade 0.6s ease forwards";
+    
+    setTimeout(typeMessage, 600);
+}
+
+const msg = `Hey love, 🥺
+
+I know you're not feeling well and I can't do anything about it. 
+
+I'm sorry. 
+
+So I'm here to tell you something. 
+
+I know this time I was not there for you... 
+
+But in a few years... 
+
+I will be there for you. 
+
+All your mornings, ☕
+afternoons, ☀️
+evenings, 🌇
+and nights. 🌙
+
+I hope you get well soon. 
+
+Here is a small message from me to make you feel better.
+
+I hope you like it.
+
+I love you Lasya ❤️
+
+I miss you. 🐻💕`;
+
+function typeMessage() {
+    let i = 0;
+    let speed = 45;
+    let target = document.getElementById("text");
+    let scrollContainer = document.getElementById("scrollContainer");
+
+    function typing() {
+        if (i < msg.length) {
+            target.innerHTML += msg.charAt(i);
+            i++;
+            
+            // Automatically scrolls down to the maximum height as text populates
+            scrollContainer.scrollTop = scrollContainer.scrollHeight;
+            
+            setTimeout(typing, speed);
+        } else {
+            target.style.borderRight = "none";
+            document.getElementById("nextBtn").style.display = "inline-block";
+        }
+    }
+    typing();
+}
+
+function showFeedback() {
+    document.getElementById("interactiveArea").innerHTML = `
+        <div class="feedback" style="display:block;">
+            <h2>Reply to my letter ❤️</h2>
+            
+            <p>Did it make you smile?</p>
+            <div class="radio-group">
+                <label><input type="radio" name="like">Yes 🥰</label>
+                <label><input type="radio" name="like">Very Much ❤️</label>
+            </div>
+
+            <p>Rate my message</p>
+            <select>
+                <option>⭐⭐⭐⭐⭐ (5/5 Always)</option>
+                <option>⭐⭐⭐⭐ (4/5)</option>
+                <option>⭐⭐⭐ (3/5)</option>
+            </select>
+
+            <p>Leave a message back for me</p>
+            <textarea placeholder="Write something sweet here..."></textarea>
+
+            <input type="submit" value="Send to My Heart ❤️" onclick="alert('Thank you for reading, Lasya! Get well soon ❤️');">
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
